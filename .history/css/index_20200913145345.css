@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+.chart_content{
+    display: flex;
+}
+.chart_content > div{
+    width: 300px;
+    height: 500px;
+    border: 1px solid;
+}
+.chart_content table{
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 10px 0;
+}
+.chart_content table th{
+    color:#6f7480;
+}
+.chart_content table td{
+    color:#eeeff0
+}
+.chart_content table tr:hover td{
+    background-color: #102243;
+    color:#5ac7ce;
+}

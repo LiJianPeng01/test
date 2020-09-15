@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.chart_content{
+    display: flex;
+}
+.chart_content > div{
+    border: 1px solid;
+}
