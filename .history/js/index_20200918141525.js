@@ -208,7 +208,7 @@ option = {
         }
     },
     legend: {
-        data: []
+        data: ['2011年']
     },
     grid: {
         left: '3%',

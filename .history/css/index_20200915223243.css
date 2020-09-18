@@ -31,6 +31,7 @@ body{
 }
 .chart_content > div{
     /* width: 300px; */
+    height: 500px;
     border: 1px solid;
 }
 .chart_content > div h3{
@@ -39,25 +40,6 @@ body{
     background: url(../images/图标1.png) no-repeat -20px center;
     background-size: 30px ;
 }
-.top_product_title{
-    display: flex;
-    justify-content: space-around;
-}
-.top_product_title li{
-    color: #64dfe3;
-    font-weight: 700;
-    box-shadow: 0px 6px 13px 10px #7a6b2b;
-    border-radius: 5px;
-}
-.top_product_title li > span{
-    display: block;
-    padding: 0 20px;
-    line-height: 2.5;
-    font-size: 16px;
-    background-color: #060b16;
-    box-shadow: inset 0px 0px 5px 5px #153b62;
-}
-
 .table_box{
     border: 1px solid #6076ad;  
 }
@@ -120,44 +102,4 @@ body{
 .span_unit{
     color: #b8babc;
     font-weight: 700;
-}
-
-/*  */
-
-.chart_content4{
-    border: 1px solid #045693;
-}
-.icon_content{
-    display: flex;
-    justify-content: space-evenly;
-}
-.icon_content li{
-    padding: 20px 20px;
-    background-color:#00131a;
-    text-align: center;
-}
-.icon_content li:hover{
-    background-color: #015271;
-}
-.icon_content li span:first-child{
-    display: block;
-    width: 60px;
-    height: 60px;
-    
-    background-size: 100%;
-}
-.icon_content li span:last-child{
-    color:#01c2e4;
-}
-.icon_01{
-    background: url(../images/icon_01.png) no-repeat left center;
-}
-.icon_02{
-    background: url(../images/icon_02.png) no-repeat left center;
-}
-.icon_03{
-    background: url(../images/icon_03.png) no-repeat left center;
-}
-.icon_04{
-    background: url(../images/icon_04.png) no-repeat left center;
 }

@@ -6,6 +6,9 @@ const url = {
 var myChart = echarts.init(document.getElementById('main_top1'));
 // 指定图表的配置项和数据
 var option = {
+    title: {
+        text: '年销售额年度最高商品1'
+    },
     grid: {
 
     },
@@ -44,6 +47,9 @@ myChart.setOption(option);
 var myChart_top2 = echarts.init(document.getElementById('main_top2'));
 // 指定图表的配置项和数据
 var option = {
+    title: {
+        text: '年销售额年度最高商品1'
+    },
     grid: {
 
     },
@@ -79,6 +85,9 @@ myChart_top2.setOption(option);
 var myChart_top3 = echarts.init(document.getElementById('main_top3'));
 // 指定图表的配置项和数据
 var option = {
+    title: {
+        text: '年销售额年度最高商品1'
+    },
     grid: {
 
     },
@@ -109,7 +118,7 @@ var option = {
 };
 
 // 使用刚指定的配置项和数据显示图表。
-myChart_top3.setOption(option);
+myChart_top2.setOption(option);
 
 getData();
 function getData() {
@@ -193,43 +202,3 @@ option = {
 
 // 使用刚指定的配置项和数据显示图表。
 myChartRate.setOption(option);
-
-
-
-
-//
-
-var fruitsRanking = echarts.init(document.getElementById('fruits_ranking'));
-option = {
-    tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-            type: 'shadow'
-        }
-    },
-    legend: {
-        data: []
-    },
-    grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-    },
-    xAxis: {
-        type: 'value',
-        boundaryGap: [0, 0.01]
-    },
-    yAxis: {
-        type: 'category',
-        data: ['苹果', '橘子', '梨', '香蕉', '榴莲', '芒果','橙子','蛇果','波罗蜜']
-    },
-    series: [
-        {
-            name: '2011年',
-            type: 'bar',
-            data: [18203, 23489, 29034, 14970, 1344, 6300,34423,2334,23442,23424]
-        }
-    ]
-};
-fruitsRanking.setOption(option);

@@ -201,6 +201,10 @@ myChartRate.setOption(option);
 
 var fruitsRanking = echarts.init(document.getElementById('fruits_ranking'));
 option = {
+    title: {
+        text: '世界人口总量',
+        subtext: '数据来自网络'
+    },
     tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -208,7 +212,7 @@ option = {
         }
     },
     legend: {
-        data: []
+        data: ['2011年', '2012年']
     },
     grid: {
         left: '3%',
@@ -222,14 +226,14 @@ option = {
     },
     yAxis: {
         type: 'category',
-        data: ['苹果', '橘子', '梨', '香蕉', '榴莲', '芒果','橙子','蛇果','波罗蜜']
+        data: ['巴西', '印尼', '美国', '印度', '中国', '世界人口(万)']
     },
     series: [
         {
             name: '2011年',
             type: 'bar',
-            data: [18203, 23489, 29034, 14970, 1344, 6300,34423,2334,23442,23424]
+            data: [18203, 23489, 29034, 104970, 131744, 630230]
         }
     ]
 };
-fruitsRanking.setOption(option);
+

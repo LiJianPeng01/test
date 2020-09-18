@@ -127,37 +127,13 @@ body{
 .chart_content4{
     border: 1px solid #045693;
 }
-.icon_content{
-    display: flex;
-    justify-content: space-evenly;
-}
-.icon_content li{
-    padding: 20px 20px;
-    background-color:#00131a;
-    text-align: center;
-}
-.icon_content li:hover{
-    background-color: #015271;
-}
 .icon_content li span:first-child{
     display: block;
-    width: 60px;
-    height: 60px;
+    width: 130px;
+    height: 130px;
     
     background-size: 100%;
 }
-.icon_content li span:last-child{
-    color:#01c2e4;
-}
 .icon_01{
     background: url(../images/icon_01.png) no-repeat left center;
-}
-.icon_02{
-    background: url(../images/icon_02.png) no-repeat left center;
-}
-.icon_03{
-    background: url(../images/icon_03.png) no-repeat left center;
-}
-.icon_04{
-    background: url(../images/icon_04.png) no-repeat left center;
 }

@@ -201,6 +201,10 @@ myChartRate.setOption(option);
 
 var fruitsRanking = echarts.init(document.getElementById('fruits_ranking'));
 option = {
+    title: {
+        text: '世界人口总量',
+        subtext: '数据来自网络'
+    },
     tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -208,7 +212,7 @@ option = {
         }
     },
     legend: {
-        data: []
+        data: ['2011年', '2012年']
     },
     grid: {
         left: '3%',
