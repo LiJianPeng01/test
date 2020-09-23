@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+span {
+    cursor: pointer;
+}
+ul li{
+    list-style: none;
+}
+.clearfloat:after {
+    content: "";
+    display: table;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+body{
+    padding: 20px;
+    background: url(../images/商品分析+红色1.png) no-repeat;
+    width:2500px;
+}
+.header{
+    height: 100px;
+    color: #fbfbfb;
+    text-align: center;
+    
+}
+.header h1{
+    font-size: 30px;
+}
+.chart_content{
+    display: flex;
+    flex-wrap:nowrap;
+    justify-content: space-evenly;
+}
+.chart_content > div{
+    
+}
+.chart_content > div h3{
+    color:#64dfe3;
+    padding: 5px ;
+    background: url(../images/图标1.png) no-repeat -20px center;
+    background-size: 30px ;
+}
+ h6{
+     color: #64dfe3;
+ }
+ .chart_1{
+     width: 450px;
+ }
+.chart_1 > div{
+    padding: 20px;
+    border: 1px solid #6076ad; 
+}
+.top_product_title{
+    display: flex;
+    justify-content: space-around;
+}
+.top_product_title li{
+    color: #64dfe3;
+    font-weight: 700;
+    box-shadow: 0px 6px 13px 10px #7a6b2b;
+    border-radius: 5px;
+}
+.top_product_title li > span{
+    display: block;
+    padding: 7px 13px;;
+    line-height: 2.5;
+    font-size: 14px;
+    background-color: #060b16;
+    box-shadow: inset 0px 0px 5px 3px #153b62;
+}
+
+.table_box{
+    background-color: rgba(6,13,26, .8);
+    border: 1px solid #6076ad;  
+}
+.table_box_red{
+    background-color:rgba(26,12,17, .8);
+    border: 1px solid #ef4949;
+}
+.chart_content table{
+    text-align: center;
+    border-collapse: collapse;
+   margin-bottom: 20px;
+}
+.chart_content table th:last-child{
+    padding-right:20px;
+}
+.chart_content table tr th{
+    padding: 8px 0;
+}
+.chart_content table tr td{
+    padding: 8px 0;
+}
+.chart_content table th{
+    color:#6f7480;
+    width: 85px;
+}
+.chart_content table td{
+    color:#eeeff0
+}
+.chart_content table tr:hover td{
+    background-color: #102243;
+    color:#5ac7ce;
+}
+.table_box_red table tr:hover td
+{
+    background-color: #431010;
+    color:#e3656b
+}
+.chart_content  h3.table_red{
+    color:#faa1a3;
+}
+/* 商品销量分析 */
+.sales_title_p{
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+.chart_3 .list_title{
+    display: flex;
+    justify-content: space-around;
+}
+.chart_3 .list_title li{
+    text-align: center;
+}
+.span_title{
+    font-size: 20px;
+    font-weight: 700;
+}
+.span_num{
+    font-size: 40px;
+    color: white;
+}
+.span1{
+    color:#73d5ed;
+}
+.span2{
+    color:#f3c482;
+}
+.span3{
+    color:#cc7070;
+}
+.span_unit{
+    color: #b8babc;
+    font-weight: 700;
+}
+
+/*  */
+
+.chart_content4{
+    border: 1px solid #045693;
+}
+.icon_content{
+    display: flex;
+    justify-content: space-evenly;
+}
+.icon_content li{
+    padding: 20px 20px;
+    background-color:#00131a;
+    text-align: center;
+}
+.icon_content li:hover{
+    background-color: #015271;
+}
+.icon_content li span:first-child{
+    display: block;
+    width: 60px;
+    height: 60px;
+    
+    background-size: 100%;
+}
+.icon_content li span:last-child{
+    color:#01c2e4;
+}
+.icon_01{
+    background: url(../images/icon_01.png) no-repeat left center;
+}
+.icon_02{
+    background: url(../images/icon_02.png) no-repeat left center;
+}
+.icon_03{
+    background: url(../images/icon_03.png) no-repeat left center;
+}
+.icon_04{
+    background: url(../images/icon_04.png) no-repeat left center;
+}

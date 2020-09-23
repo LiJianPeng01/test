@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧零售</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/4.8.0/echarts.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>智慧零售(门店)运营数据驾驶舱</h1>
+    </div>
+    <div class="chart_content">
+        <div class="chart_1">
+            <h3>热销商品TOP5</h3>
+            <div style="background-color: rgba(6,12,24,0.8);">
+                <div style="margin-bottom: 30px;">
+                    <ul class="top_product_title">
+                        <li><span>热销产品1</span> </li>
+                        <li><span>热销产品2</span> </li>
+                        <li><span>热销产品3</span> </li>
+                    </ul>
+                </div>
+                <div class="top_sort">
+                    <h6>年销售额贡献最高商品1</h6>
+                    <div id="main_top1" style="width: 100%;height:200px;border: 1px solid #6076ad;"></div>
+                </div>
+
+                <div class="top_sort">
+                    <h6>年销售额贡献最高商品2</h6>
+                    <div id="main_top2" style="width: 100%;height:200px;border: 1px solid #6076ad;"></div>
+                </div>
+                <div class="top_sort">
+                    <h6>年销售额贡献最高商品3</h6>
+                    <div id="main_top3" style="width: 100%;height:200px;border: 1px solid #6076ad;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="chart_2">
+            <div>
+                <h3>热销商品TOP5</h3>
+                <div class="table_box">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>商品</th>
+                                <th>单价</th>
+                                <th>销量</th>
+                                <th>总消费额</th>
+                                <th>高于平均贡献</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>西红柿</td>
+                                <td>29元</td>
+                                <td>100斤</td>
+                                <td>2900元</td>
+                                <td>25%</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>西红柿</td>
+                                <td>29元</td>
+                                <td>100斤</td>
+                                <td>2900元</td>
+                                <td>25%</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>西红柿</td>
+                                <td>29元</td>
+                                <td>100斤</td>
+                                <td>2900元</td>
+                                <td>25%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <h3 class="table_red">滞销商品TOP5</h3>
+                <div class="table_box_red">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>商品</th>
+                                <th>单价</th>
+                                <th>销量</th>
+                                <th>总消费额</th>
+                                <th>高于平均贡献</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>西红柿</td>
+                                <td>29元</td>
+                                <td>100斤</td>
+                                <td>2900元</td>
+                                <td>25%</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>西红柿</td>
+                                <td>29元</td>
+                                <td>100斤</td>
+                                <td>2900元</td>
+                                <td>25%</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>西红柿</td>
+                                <td>29元</td>
+                                <td>100斤</td>
+                                <td>2900元</td>
+                                <td>25%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <h3>用户最爱商品组合TOP5</h3>
+                <div class="table_box">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>商品</th>
+                                <th>单价</th>
+                                <th>销量</th>
+                                <th>总消费额</th>
+                                <th>高于平均贡献</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>西红柿</td>
+                                <td>29元</td>
+                                <td>100斤</td>
+                                <td>2900元</td>
+                                <td>25%</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>西红柿</td>
+                                <td>29元</td>
+                                <td>100斤</td>
+                                <td>2900元</td>
+                                <td>25%</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>西红柿</td>
+                                <td>29元</td>
+                                <td>100斤</td>
+                                <td>2900元</td>
+                                <td>25%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="chart_3" style="width:700px;">
+            <div>
+            <p class="sales_title_p" style="color:#0efcff">
+                商品销量分析<br><span style="color:#43636d">MERCHANDISE SALES ANALUSIS</span>
+            </p>
+            <div style="margin-bottom: 20px;">
+                <ul class="list_title">
+                    <li>
+                        <span class="span_title span1">日总销售额</span><br>
+                        <span class="span_num">3000</span><span class="span_unit">元</span>
+                    </li>
+                    <li>
+                        <span class="span_title span2">日销售数量</span><br>
+                        <span class="span_num">1350</span><span class="span_unit">单</span>
+                    </li>
+                    <li>
+                        <span class="span_title span3">日销售平均客单价</span><br>
+                        <span class="span_num">1234</span><span class="span_unit">元</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <div id="growth_rate" style="width: 100%;height:200px;"></div>
+            </div>
+            <div class="table_box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>商品类别</th>
+                            <th>销量</th>
+                            <th>总消费额</th>
+                            <th>消费贡献占比</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>西红柿</td>
+                            <td>100斤</td>
+                            <td>2900元</td>
+                            <td>25%</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>西红柿</td>
+                            <td>100斤</td>
+                            <td>2900元</td>
+                            <td>25%</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>西红柿</td>
+                            <td>100斤</td>
+                            <td>2900元</td>
+                            <td>25%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="sales_fx">
+                <div class="table_box">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>商品名称</th>
+                                <th>销量</th>
+                                <th>总消费额</th>
+                                <th>消费贡献占比</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>西红柿</td>
+                                <td>29元</td>
+                                <td>100斤</td>
+                                <td>2900元</td>
+                                <td>25%</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>西红柿</td>
+                                <td>29元</td>
+                                <td>100斤</td>
+                                <td>2900元</td>
+                                <td>25%</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>西红柿</td>
+                                <td>29元</td>
+                                <td>100斤</td>
+                                <td>2900元</td>
+                                <td>25%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="chart_4">
+            <h3>不同类别商品销售额排名Top10</h3>
+            <div class="chart_content4">
+                <div>
+                    <div id="fruits_ranking" style="width: 100%;height:300px;"></div>
+                </div>
+                <ul class="icon_content">
+                    <li>
+                        <span class="icon_01"></span>
+                        <span>新鲜水果</span>
+                    </li>
+                    <li>
+                        <span class="icon_02"></span>
+                        <span>居家用品</span>
+                    </li>
+                    <li>
+                        <span class="icon_03"></span>
+                        <span>衣物清洁</span>
+                    </li>
+                    <li>
+                        <span class="icon_04"></span>
+                        <span>见过蜜饯</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
