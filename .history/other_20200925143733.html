@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background: url(images/back_body.png) no-repeat left;
+        }
+        h3 {
+            line-height: 30px;
+            padding-left: 20px;
+            margin-bottom: 5px;
+            height: 30px;
+            color: #64dfe3;
+            background: url(images/back_02.png) no-repeat left;
+            background-size: 38% 30px;
+        }
+
+        .table_box {
+
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            background-color: rgba(6, 13, 26, .8);
+            border: 1px solid #6076ad;
+        }
+
+        .chart_content {
+            width: 500px;
+        }
+
+        .chart_content table {
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        .chart_content table th:last-child {
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+
+        .chart_content table tr th {
+            padding: 8px 0;
+        }
+
+        .chart_content table tr td {
+            padding: 8px 0;
+        }
+
+        .chart_content table th {
+            color: #6f7480;
+            width: 85px;
+        }
+
+        .chart_content table td {
+            color: #eeeff0
+        }
+
+        .chart_content table tr:hover td {
+            background-color: #102243;
+            color: #5ac7ce;
+        }
+
+        .table_box_red table tr:hover td {
+            background-color: #431010;
+            color: #e3656b
+        }
+
+        #chart_pie {
+            width: 400px;
+            height: 200px;
+            border: 1px solid #6076ad;
+        }
+
+        .pie_box {
+            width: 309px;
+            height: 370px;
+            border: 1px solid #6076ad;
+        }
+
+        #chart_pie2 {
+            width: 200px;
+            height: 200px;
+        }
+
+        #chart_progress {
+            position: absolute;
+            right: 10px;
+            bottom: 0;
+            width: 150px;
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chart_content">
+        <div class="chart_6">
+            <div>
+                <h3>顾客年龄分布</h3>
+                <div>
+                    <div id="chart_pie"></div>
+                </div>
+            </div>
+            <div>
+                <h3>顾客年龄段消费贡献</h3>
+                <div class="pie_box" style="position: relative;">
+                    <div id="chart_pie2"></div>
+                    <div id="chart_progress"></div>
+                </div>
+            </div>
+
+            <div>
+                <h3>26-35岁年龄顾客偏好TOP5</h3>
+                <div class="table_box">
+                    <table id="preference_tableData">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>商品</th>
+                                <th>单价</th>
+                                <th>销量</th>
+                                <th>总消费额</th>
+                                <!-- <th>消费贡献占比</th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/4.8.0/echarts.min.js"></script>
+    <script src="js/other.js"></script>
+</body>
+
+</html>
