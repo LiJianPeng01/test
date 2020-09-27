@@ -41,22 +41,27 @@ body{
     /* position: relative; */
     display: inline-block;
     width: 30px;
-    height: 40px;
+    height: 50px;
     text-align: center;
-    line-height: 40px;
+    line-height: 50px;
     border-radius: 5px;
     font-size: 24px;
-    border: 1px solid rgba(13,24,44,1);
-    background-color: rgba(13,24,44,1);
-    background-image:  linear-gradient(to bottom, #fff, #2265b3 );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color:transparent;
-    color: transparent; 
-    /* filter: alpha(opacity=30);
-    opacity: 0.4; */
-    
+    background:url(../images/back_time.png) no-repeat left,linear-gradient(to bottom, #e7b957, #f28413);
+    background-size: cover;
+    filter: alpha(opacity=30);
+    opacity: 0.4;
+    color: white;
   }
-
+.header h1 span[data-content]::after{
+    content:attr(data-content);
+    display: block;
+    position:absolute;
+    color:yellow;
+    left:0;
+    top:0;
+    z-index:2;
+    -webkit-mask-image:-webkit-gradient(linear, 0 0, 0 bottom, from(yellow), to(rgba(0, 0, 255, 0)));
+}
   .header h1 span:nth-child(9){
       margin-left: 50px;
   }

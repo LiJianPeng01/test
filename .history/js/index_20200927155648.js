@@ -457,15 +457,6 @@ function getGrowthRate() {
                                 color: '#7086b9',
                             }
                         },
-                        axisLine:{
-                            show:true,
-                            lineStyle:{
-                                color:"#10192f"
-                            }
-                        },
-                        axisTick:{     //设置坐标轴刻度显示
-                            show:false
-                        }
                     }
                 ],
                 yAxis: [
@@ -508,7 +499,7 @@ function getGrowthRate() {
                         name: '销售额',
                         type: 'line',
                         smooth: true, //平滑曲线
-                        showSymbol :false,  //取消折点圆圈
+                        symbol: 'none',  //取消折点圆圈
                         stack: '销售额',
                         areaStyle:{   //区域渐变
                             normal:{
@@ -523,6 +514,16 @@ function getGrowthRate() {
     
                             }
                         },
+                        emphasis:{
+                            symbol:"circle",
+                            label:{
+                                show:true
+                            },
+                            itemStyle:{
+                                borderColor:"#60d1d7"
+                            },
+                            borderColor:"#60d1d7"
+                        },
                         data: arrData
                     },
                     {
@@ -530,7 +531,7 @@ function getGrowthRate() {
                         type: 'line',
                         smooth: true,
                         yAxisIndex: 1,
-                        showSymbol :false,  //取消折点圆圈
+                        symbol: 'none',  //取消折点圆圈
                         stack: '增长率',
                         itemStyle: {
                             color:"#e0ba80"

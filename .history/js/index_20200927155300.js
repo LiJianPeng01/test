@@ -172,7 +172,7 @@ function getData() {
                             color: "#0e1d36"
                         }
                     },
-                    data: []
+                    data: [2000, 4000, 6000, 8000, 10000, 12000]
                 },
                 series: [{
                     name: '销量',
@@ -457,15 +457,6 @@ function getGrowthRate() {
                                 color: '#7086b9',
                             }
                         },
-                        axisLine:{
-                            show:true,
-                            lineStyle:{
-                                color:"#10192f"
-                            }
-                        },
-                        axisTick:{     //设置坐标轴刻度显示
-                            show:false
-                        }
                     }
                 ],
                 yAxis: [
@@ -508,7 +499,7 @@ function getGrowthRate() {
                         name: '销售额',
                         type: 'line',
                         smooth: true, //平滑曲线
-                        showSymbol :false,  //取消折点圆圈
+                        symbol: 'none',  //取消折点圆圈
                         stack: '销售额',
                         areaStyle:{   //区域渐变
                             normal:{
@@ -523,6 +514,15 @@ function getGrowthRate() {
     
                             }
                         },
+                        emphasis:{
+                            label:{
+                                show:true
+                            },
+                            itemStyle:{
+                                borderColor:"#60d1d7"
+                            },
+                            borderColor:"#60d1d7"
+                        },
                         data: arrData
                     },
                     {
@@ -530,7 +530,7 @@ function getGrowthRate() {
                         type: 'line',
                         smooth: true,
                         yAxisIndex: 1,
-                        showSymbol :false,  //取消折点圆圈
+                        symbol: 'none',  //取消折点圆圈
                         stack: '增长率',
                         itemStyle: {
                             color:"#e0ba80"

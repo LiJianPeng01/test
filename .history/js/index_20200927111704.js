@@ -1,9 +1,9 @@
 var header = document.getElementById("time_content")
-var spans = header.getElementsByTagName("span");
-setInterval(function () {
+var spans=header.getElementsByTagName("span");
+setInterval(function(){
     var date = new Date();
     var year = date.getFullYear();
-    var month = date.getMonth() + 1;
+    var month = date.getMonth()+1;
     var dates = date.getDate();
 
     var hours = date.getHours();
@@ -11,44 +11,19 @@ setInterval(function () {
     var s = date.getSeconds();
 
     spans[3].innerHTML = year.toString().substr(-1);
-    if (month <= 9) {
-        spans[4].innerHTML = "0";
-        spans[5].innerHTML = month;
-    } else {
-        spans[4].innerHTML = month.toString().substring(0, 1);
-        spans[5].innerHTML = month.toString().substring(0, 1);
+    if (month > 9) {
+        spans[4].innerHTML = month.toString().substring(0,1);
+    }
+    spans[5].innerHTML = month.toString().substring(0,1);
+    
+    spans[6].innerHTML = dates.toString().substring(0,1);
+    spans[7].innerHTML = dates.toString().substr(1,1);
 
-    }
-    if (dates <= 9) {
-        spans[6].innerHTML = "0";
-        spans[7].innerHTML = dates;
-    } else {
-        spans[6].innerHTML = dates.toString().substring(0, 1);
-        spans[7].innerHTML = dates.toString().substr(1, 1);
-    }
-    if (hours <= 9) {
-        spans[8].innerHTML = "0";
-        spans[9].innerHTML = hours;
-    } else {
-        spans[8].innerHTML = hours.toString().substring(0, 1);
-        spans[9].innerHTML = hours.toString().substr(1, 1);
-    }
+    spans[8].innerHTML = hours.toString().substring(0,1);
+    spans[9].innerHTML = hours.toString().substr(1,1);
 
-    if (minutes <= 9) {
-        spans[10].innerHTML = "0";
-        spans[11].innerHTML = minutes
-    } else {
-        spans[10].innerHTML = minutes.toString().substring(0, 1);
-        spans[11].innerHTML = minutes.toString().substr(1, 1);
-    }
-    if (s <= 9) {
-        spans[12].innerHTML = "0";
-        spans[13].innerHTML = s
-    } else {
-        spans[12].innerHTML = s.toString().substring(0, 1);
-        spans[13].innerHTML = s.toString().substr(1, 1);
-    }
-}, 1000);
+    console.log(month.toString())
+},1000);
 
 const url = {
     host: "http://39.105.36.198:8000/analysis_charts/comanly/",
@@ -72,8 +47,6 @@ function getData() {
         data: obj,
         success: function (res) {
             var timeData = [];
-            var timeData2=[];
-            var timeData3=[];
             var opt1 = [];
             var opt2 = [];
             var opt3 = [];
@@ -87,18 +60,15 @@ function getData() {
             for (let i = 1; i < res.source1.length; i++) {
                 const element = res.source1[i];
                 // console.log(element[0])
-                timeData.push(element[0]);
-                
+                timeData.push(element[0])
                 opt1.push(element[1])
             }
             for (let i = 1; i < res.source2.length; i++) {
                 const element = res.source2[i];
-                timeData2.push(element[0])
                 opt2.push(element[1])
             }
             for (let i = 1; i < res.source3.length; i++) {
                 const element = res.source3[i];
-                timeData3.push(element[0])
                 opt3.push(element[1])
             }
             console.log(timeData)
@@ -140,7 +110,7 @@ function getData() {
                 xAxis: {
                     type: 'category',
                     boundaryGap: false,
-                    data: timeData,
+                    data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
                     axisLine: {
                         lineStyle: {
                             color: "#091021"
@@ -172,29 +142,14 @@ function getData() {
                             color: "#0e1d36"
                         }
                     },
-                    data: []
+                    data: [2000, 4000, 6000, 8000, 10000, 12000]
                 },
                 series: [{
                     name: '销量',
                     data: opt1,
                     type: 'line',
                     smooth: true,
-                    areaStyle:{   //区域渐变
-                        normal:{
-                           //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
-                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                offset: 0,
-                                color: 'rgba(80,141,255,0.39)'
-                            }, {
-                                offset: .34,
-                                color: 'rgba(56,155,255,0.25)'
-                            },{
-                                offset: 1,
-                                color: 'rgba(38,197,254,0.00)'
-                            }])
-
-                        }
-                    },
+                    areaStyle: {}
                 }]
             };
 
@@ -237,7 +192,7 @@ function getData() {
                 xAxis: {
                     type: 'category',
                     boundaryGap: false,
-                    data: timeData2,
+                    data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
                     axisLine: {
                         lineStyle: {
                             color: "#091021"
@@ -269,29 +224,14 @@ function getData() {
                             color: "#0e1d36"
                         }
                     },
-                    data: []
+                    data: [2000, 4000, 6000, 8000, 10000, 12000]
                 },
                 series: [{
                     name: '销量',
                     data: opt2,
                     type: 'line',
                     smooth: true,
-                    areaStyle:{   //区域渐变
-                        normal:{
-                           //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
-                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                offset: 0,
-                                color: 'rgba(80,141,255,0.39)'
-                            }, {
-                                offset: .34,
-                                color: 'rgba(56,155,255,0.25)'
-                            },{
-                                offset: 1,
-                                color: 'rgba(38,197,254,0.00)'
-                            }])
-
-                        }
-                    },
+                    areaStyle: {}
                 }]
             };
             var option3 = {
@@ -331,7 +271,7 @@ function getData() {
                 xAxis: {
                     type: 'category',
                     boundaryGap: false,
-                    data: timeData3,
+                    data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
                     axisLine: {
                         lineStyle: {
                             color: "#091021"
@@ -363,29 +303,14 @@ function getData() {
                             color: "#0e1d36"
                         }
                     },
-                    data: []
+                    data: [2000, 4000, 6000, 8000, 10000, 12000]
                 },
                 series: [{
                     name: '销量',
                     smooth: true,
                     data: opt3,
                     type: 'line',
-                    areaStyle:{   //区域渐变
-                        normal:{
-                           //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
-                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                offset: 0,
-                                color: 'rgba(80,141,255,0.39)'
-                            }, {
-                                offset: .34,
-                                color: 'rgba(56,155,255,0.25)'
-                            },{
-                                offset: 1,
-                                color: 'rgba(38,197,254,0.00)'
-                            }])
-
-                        }
-                    },
+                    areaStyle: {}
                 }]
             };
             // 使用刚指定的配置项和数据显示图表。。
@@ -410,11 +335,9 @@ function getGrowthRate() {
             console.log(res.source);
             var arrData = [];
             var rateData = [];
-            var timeData=[];
             for (let i = 1; i < res.source.length; i++) {
                 const element = res.source[i];
                 // console.log(element[1])
-                timeData.push(element[0]);
                 arrData.push(element[1])
                 rateData.push(element[2])
             }
@@ -451,21 +374,12 @@ function getGrowthRate() {
                     {
                         type: 'category',
                         boundaryGap: false,
-                        data: timeData,
+                        data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
                         axisLabel: { //轴文字标签
                             textStyle: {
                                 color: '#7086b9',
                             }
                         },
-                        axisLine:{
-                            show:true,
-                            lineStyle:{
-                                color:"#10192f"
-                            }
-                        },
-                        axisTick:{     //设置坐标轴刻度显示
-                            show:false
-                        }
                     }
                 ],
                 yAxis: [
@@ -507,22 +421,9 @@ function getGrowthRate() {
                     {
                         name: '销售额',
                         type: 'line',
-                        smooth: true, //平滑曲线
-                        showSymbol :false,  //取消折点圆圈
+                        smooth: true,
                         stack: '销售额',
-                        areaStyle:{   //区域渐变
-                            normal:{
-                               //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
-                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                    offset: 0,
-                                    color: 'rgba(62,133,143,0.8)'
-                                },{
-                                    offset: 1,
-                                    color: 'rgba(62,133,143,0.00)'
-                                }])
-    
-                            }
-                        },
+                        areaStyle: {},
                         data: arrData
                     },
                     {
@@ -530,24 +431,8 @@ function getGrowthRate() {
                         type: 'line',
                         smooth: true,
                         yAxisIndex: 1,
-                        showSymbol :false,  //取消折点圆圈
                         stack: '增长率',
-                        itemStyle: {
-                            color:"#e0ba80"
-                        },
-                        areaStyle:{   //区域渐变
-                            normal:{
-                               //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
-                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                    offset: 0,
-                                    color: 'rgba(160,180, 118,0.8)'
-                                }, {
-                                    offset: 1,
-                                    color: 'rgba(160,180, 118,0.0)'
-                                }])
-    
-                            }
-                        },
+                        areaStyle: {},
                         data: rateData
                     }
                 ]
@@ -561,8 +446,8 @@ function getGrowthRate() {
 
 
 //单击分类触发事件
-$(".icon_content li span:last-child").on("click", function (e) {
-    console.log($(this).text())
+$(".icon_content li span:last-child").on("click",function(e){
+    console.log($(this).text() )
     var text = $(this).text();
     getDifferentTypes(text)
 })
@@ -579,23 +464,23 @@ function getDifferentTypes(text) {
             var fruitsRankingData = [];  // key
             var fruitsRankingVal = [];  //指定key的值
             var item_name = [];
-            var amount = [];
+            var amount=[];
             for (const key in res) {
                 // console.log(Object.keys(res));
-                fruitsRankingData = Object.keys(res);
+                fruitsRankingData=Object.keys(res);
             }
             if (text) {
                 fruitsRankingVal = res[text];
             } else {
-                fruitsRankingVal = res[fruitsRankingData[0]];
+                fruitsRankingVal = res[ fruitsRankingData[0]];
             }
             fruitsRankingVal.forEach(element => {  // 当前y轴对应的数据
                 item_name.push(element[1].item_name);
                 amount.push(element[2].amount)
             });
             console.log(fruitsRankingVal);
-            $(".icon_content li").each(function (index) {
-                $(".icon_content li:nth-child(" + (index + 1) + ") > span:last-child").html(fruitsRankingData[index]);
+            $(".icon_content li").each(function(index){
+                $(".icon_content li:nth-child("+(index+1)+") > span:last-child").html(fruitsRankingData[index]);
             });
             option = {
                 tooltip: {
@@ -603,7 +488,7 @@ function getDifferentTypes(text) {
                     axisPointer: {
                         type: 'shadow'
                     },
-
+                    
                 },
                 legend: {
                     show: false,
@@ -626,10 +511,10 @@ function getDifferentTypes(text) {
                         textStyle: {
                             color: '#28a4fd',
                         },
-                        formatter: function (value, index) {
+                        formatter: function (value,index) {
                             // console.log(value,index)
-                            return value.substring(0, 4) + "...";
-                            // 鼠标移上显示的文字
+                            return  value.substring(0,4)+"..." ;
+                           // 鼠标移上显示的文字
                         }
                     },
                     data: item_name,
@@ -638,7 +523,7 @@ function getDifferentTypes(text) {
                     {
                         name: '销售额',
                         type: 'bar',
-                        barCategoryGap: "30%",
+                        barCategoryGap :"30%",
                         label: {
                             show: true,
                             position: "insideRight",

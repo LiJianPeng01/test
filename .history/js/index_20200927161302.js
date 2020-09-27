@@ -459,9 +459,6 @@ function getGrowthRate() {
                         },
                         axisLine:{
                             show:true,
-                            lineStyle:{
-                                color:"#10192f"
-                            }
                         },
                         axisTick:{     //设置坐标轴刻度显示
                             show:false
@@ -530,7 +527,7 @@ function getGrowthRate() {
                         type: 'line',
                         smooth: true,
                         yAxisIndex: 1,
-                        showSymbol :false,  //取消折点圆圈
+                        symbol: 'none',  //取消折点圆圈
                         stack: '增长率',
                         itemStyle: {
                             color:"#e0ba80"

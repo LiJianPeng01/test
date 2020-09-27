@@ -41,6 +41,7 @@ setInterval(function () {
         spans[10].innerHTML = minutes.toString().substring(0, 1);
         spans[11].innerHTML = minutes.toString().substr(1, 1);
     }
+
     if (s <= 9) {
         spans[12].innerHTML = "0";
         spans[13].innerHTML = s
@@ -72,8 +73,6 @@ function getData() {
         data: obj,
         success: function (res) {
             var timeData = [];
-            var timeData2=[];
-            var timeData3=[];
             var opt1 = [];
             var opt2 = [];
             var opt3 = [];
@@ -87,18 +86,15 @@ function getData() {
             for (let i = 1; i < res.source1.length; i++) {
                 const element = res.source1[i];
                 // console.log(element[0])
-                timeData.push(element[0]);
-                
+                timeData.push(element[0])
                 opt1.push(element[1])
             }
             for (let i = 1; i < res.source2.length; i++) {
                 const element = res.source2[i];
-                timeData2.push(element[0])
                 opt2.push(element[1])
             }
             for (let i = 1; i < res.source3.length; i++) {
                 const element = res.source3[i];
-                timeData3.push(element[0])
                 opt3.push(element[1])
             }
             console.log(timeData)
@@ -140,7 +136,7 @@ function getData() {
                 xAxis: {
                     type: 'category',
                     boundaryGap: false,
-                    data: timeData,
+                    data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
                     axisLine: {
                         lineStyle: {
                             color: "#091021"
@@ -172,29 +168,14 @@ function getData() {
                             color: "#0e1d36"
                         }
                     },
-                    data: []
+                    data: [2000, 4000, 6000, 8000, 10000, 12000]
                 },
                 series: [{
                     name: '销量',
                     data: opt1,
                     type: 'line',
                     smooth: true,
-                    areaStyle:{   //区域渐变
-                        normal:{
-                           //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
-                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                offset: 0,
-                                color: 'rgba(80,141,255,0.39)'
-                            }, {
-                                offset: .34,
-                                color: 'rgba(56,155,255,0.25)'
-                            },{
-                                offset: 1,
-                                color: 'rgba(38,197,254,0.00)'
-                            }])
-
-                        }
-                    },
+                    areaStyle: {}
                 }]
             };
 
@@ -237,7 +218,7 @@ function getData() {
                 xAxis: {
                     type: 'category',
                     boundaryGap: false,
-                    data: timeData2,
+                    data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
                     axisLine: {
                         lineStyle: {
                             color: "#091021"
@@ -269,29 +250,14 @@ function getData() {
                             color: "#0e1d36"
                         }
                     },
-                    data: []
+                    data: [2000, 4000, 6000, 8000, 10000, 12000]
                 },
                 series: [{
                     name: '销量',
                     data: opt2,
                     type: 'line',
                     smooth: true,
-                    areaStyle:{   //区域渐变
-                        normal:{
-                           //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
-                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                offset: 0,
-                                color: 'rgba(80,141,255,0.39)'
-                            }, {
-                                offset: .34,
-                                color: 'rgba(56,155,255,0.25)'
-                            },{
-                                offset: 1,
-                                color: 'rgba(38,197,254,0.00)'
-                            }])
-
-                        }
-                    },
+                    areaStyle: {}
                 }]
             };
             var option3 = {
@@ -331,7 +297,7 @@ function getData() {
                 xAxis: {
                     type: 'category',
                     boundaryGap: false,
-                    data: timeData3,
+                    data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
                     axisLine: {
                         lineStyle: {
                             color: "#091021"
@@ -363,29 +329,14 @@ function getData() {
                             color: "#0e1d36"
                         }
                     },
-                    data: []
+                    data: [2000, 4000, 6000, 8000, 10000, 12000]
                 },
                 series: [{
                     name: '销量',
                     smooth: true,
                     data: opt3,
                     type: 'line',
-                    areaStyle:{   //区域渐变
-                        normal:{
-                           //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
-                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                offset: 0,
-                                color: 'rgba(80,141,255,0.39)'
-                            }, {
-                                offset: .34,
-                                color: 'rgba(56,155,255,0.25)'
-                            },{
-                                offset: 1,
-                                color: 'rgba(38,197,254,0.00)'
-                            }])
-
-                        }
-                    },
+                    areaStyle: {}
                 }]
             };
             // 使用刚指定的配置项和数据显示图表。。
@@ -410,11 +361,9 @@ function getGrowthRate() {
             console.log(res.source);
             var arrData = [];
             var rateData = [];
-            var timeData=[];
             for (let i = 1; i < res.source.length; i++) {
                 const element = res.source[i];
                 // console.log(element[1])
-                timeData.push(element[0]);
                 arrData.push(element[1])
                 rateData.push(element[2])
             }
@@ -451,21 +400,12 @@ function getGrowthRate() {
                     {
                         type: 'category',
                         boundaryGap: false,
-                        data: timeData,
+                        data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
                         axisLabel: { //轴文字标签
                             textStyle: {
                                 color: '#7086b9',
                             }
                         },
-                        axisLine:{
-                            show:true,
-                            lineStyle:{
-                                color:"#10192f"
-                            }
-                        },
-                        axisTick:{     //设置坐标轴刻度显示
-                            show:false
-                        }
                     }
                 ],
                 yAxis: [
@@ -507,22 +447,9 @@ function getGrowthRate() {
                     {
                         name: '销售额',
                         type: 'line',
-                        smooth: true, //平滑曲线
-                        showSymbol :false,  //取消折点圆圈
+                        smooth: true,
                         stack: '销售额',
-                        areaStyle:{   //区域渐变
-                            normal:{
-                               //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
-                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                    offset: 0,
-                                    color: 'rgba(62,133,143,0.8)'
-                                },{
-                                    offset: 1,
-                                    color: 'rgba(62,133,143,0.00)'
-                                }])
-    
-                            }
-                        },
+                        areaStyle: {},
                         data: arrData
                     },
                     {
@@ -530,24 +457,8 @@ function getGrowthRate() {
                         type: 'line',
                         smooth: true,
                         yAxisIndex: 1,
-                        showSymbol :false,  //取消折点圆圈
                         stack: '增长率',
-                        itemStyle: {
-                            color:"#e0ba80"
-                        },
-                        areaStyle:{   //区域渐变
-                            normal:{
-                               //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
-                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                    offset: 0,
-                                    color: 'rgba(160,180, 118,0.8)'
-                                }, {
-                                    offset: 1,
-                                    color: 'rgba(160,180, 118,0.0)'
-                                }])
-    
-                            }
-                        },
+                        areaStyle: {},
                         data: rateData
                     }
                 ]

@@ -172,7 +172,7 @@ function getData() {
                             color: "#0e1d36"
                         }
                     },
-                    data: []
+                    data: [2000, 4000, 6000, 8000, 10000, 12000]
                 },
                 series: [{
                     name: '销量',
@@ -269,7 +269,7 @@ function getData() {
                             color: "#0e1d36"
                         }
                     },
-                    data: []
+                    data: [2000, 4000, 6000, 8000, 10000, 12000]
                 },
                 series: [{
                     name: '销量',
@@ -363,7 +363,7 @@ function getData() {
                             color: "#0e1d36"
                         }
                     },
-                    data: []
+                    data: [2000, 4000, 6000, 8000, 10000, 12000]
                 },
                 series: [{
                     name: '销量',
@@ -457,15 +457,6 @@ function getGrowthRate() {
                                 color: '#7086b9',
                             }
                         },
-                        axisLine:{
-                            show:true,
-                            lineStyle:{
-                                color:"#10192f"
-                            }
-                        },
-                        axisTick:{     //设置坐标轴刻度显示
-                            show:false
-                        }
                     }
                 ],
                 yAxis: [
@@ -507,8 +498,7 @@ function getGrowthRate() {
                     {
                         name: '销售额',
                         type: 'line',
-                        smooth: true, //平滑曲线
-                        showSymbol :false,  //取消折点圆圈
+                        smooth: true,
                         stack: '销售额',
                         areaStyle:{   //区域渐变
                             normal:{
@@ -530,7 +520,7 @@ function getGrowthRate() {
                         type: 'line',
                         smooth: true,
                         yAxisIndex: 1,
-                        showSymbol :false,  //取消折点圆圈
+                        symbol: 'none',  //取消折点圆圈
                         stack: '增长率',
                         itemStyle: {
                             color:"#e0ba80"
@@ -540,7 +530,7 @@ function getGrowthRate() {
                                //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
                                 color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                     offset: 0,
-                                    color: 'rgba(160,180, 118,0.8)'
+                                    color: 'rgba(160,180, 118,0.9)'
                                 }, {
                                     offset: 1,
                                     color: 'rgba(160,180, 118,0.0)'
